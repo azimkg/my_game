@@ -1,70 +1,13 @@
-# Getting Started with Create React App
+Предполагается реализация с использованием Nuxt.js. Хотя использование Nuxt.js не является обязательным, и вы можете сами настроить связку vue + vue-router + vue-ex.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Суть задания - реализовать SPA для игры в викторину Jeopardy, API находится по адресу http://jservice.io/
 
-## Available Scripts
+Первое, что должно делать веб-приложение при загрузке - спрашивать имя игрока. Без этого остальной функционал не должен быть доступен. Игрок вводит любое валидное имя, после чего получает доступ к веб-приложению. Валидным считается любое имя, состоящее из символов кириллицы, латиницы, цифр и знака подчеркивания.
 
-In the project directory, you can run:
+У веб-приложения есть две страницы - игра и статистика. Игрок может переключаться между ними с помощью меню (его дизайн и расположение - на ваше усмотрение), при этом данные не должны теряться (hint: используйте vuex).
 
-### `npm start`
+На странице статистика отображается статистика игрока - его имя, количество сыгранных вопросов, количество верных и неверных ответов, сумма баллов.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+На странице игра происходит сама игра. Логика следующая: если игра не начата (состояние “вне игры”), показываем кнопку “начать игру”. Если игра начата, игрок видит табличку с категориями и стоимостями вопросов (как в телевизионной “своей игре”), например 5 тем по 5 вопросов. Кликая на какую-либо из ячеек таблицы, игрок вместо таблицы видит карточку вопроса и поле для ввода ответа. На ответ есть 60 секунд, после чего вопрос считается отвеченным неверно. Если игрок ввел верный ответ, он получает сообщение об этом и зарабатывает баллы, равные стоимости вопроса. Если ответ неверный, игрок видит сообщение об этом, с баланса игрока списывается сумма, равная номиналу вопроса. После того, как ответ дан (или истекло время) мы снова видим таблицу с вопросами. Игра продолжается до тех пор, пока не отвечены все вопросы или не нажата кнопка “Закончить игру”, которая переводит SPA в состояние “вне игры”. Завершение игры не приводит к обнулению статистики. Счет в текущей игре и кнопка “завершить игру” находятся на странице игры, дизайн и расположение - по желанию. Отыгранный вопрос пропадает из таблицы. Цвет таблицы вопросов должен быть зеленым.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://freesoft.ru/storage/images/77/763/76222/76222_normal.png
