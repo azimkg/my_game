@@ -1,3 +1,4 @@
+import AllQuestions from "../pages/components/AllQuestions";
 import MainPage from "../pages/MainPage";
 import StatisticPage from "../pages/StatisticPage";
 
@@ -13,5 +14,11 @@ export const ROUTES_NAME = [
     element: <StatisticPage />,
     link: "/statistic",
     title: "Статистика",
+  },
+  {
+    id: 3,
+    element: <AllQuestions />,
+    link: "/all/:id/:id",
+    title: "",
   },
 ];

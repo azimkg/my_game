@@ -1,1 +1,1 @@
-export const API_GAME = "http://jservice.io/api/categories";
+export const API_GAME = "http://jservice.io/api";

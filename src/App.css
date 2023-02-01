@@ -31,3 +31,19 @@
 .block {
   border-bottom: 1px solid grey;
 }
+.filters {
+  display: flex;
+  justify-content: space-between;
+}
+.game_block {
+  width: 500px;
+  height: 50px;
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: green;
+  text-transform: uppercase;
+}
