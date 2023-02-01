@@ -8,6 +8,7 @@ const Navbar = () => {
     <div className="navbar">
       {ROUTES_NAME?.map((item) => (
         <Link
+          key={item.id}
           to={item.link}
           className={
             pathname == item.link ? "navbar_elem-active" : "navbar_elem"

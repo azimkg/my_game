@@ -28,3 +28,6 @@
   margin-left: 20px;
   border-bottom: 1px solid #fff;
 }
+.block {
+  border-bottom: 1px solid grey;
+}

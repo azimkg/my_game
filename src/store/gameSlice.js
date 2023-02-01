@@ -3,10 +3,12 @@ import { API_GAME } from "../api/API";
 
 export const productApi = createApi({
   reducerPath: "api/products",
-  baseQuery: fetchBaseQuery({ baseURL: API_GAME }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://jservice.io/api/clues",
+  }),
   endpoints: (build) => ({
     getProducts: build.query({
-      query: () => "products",
+      query: () => "",
     }),
   }),
 });
